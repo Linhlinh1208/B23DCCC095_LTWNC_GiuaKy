@@ -6,10 +6,10 @@ import { Book } from '../types/book';
 
 const mockBook: Book = {
   id: 'b1',
-  title: 'Clean Architecture',
-  author: 'Robert C. Martin',
+  title: 'Giáo trình Chuyên ngành A',
+  author: 'Nguyễn Văn A',
   genre: 'CNTT',
-  publishYear: 2017,
+  publishYear: 2023,
   availableCopies: 1
 };
 
@@ -17,8 +17,8 @@ describe('BookCard Component', () => {
   test('Test 1: Hiển thị đầy đủ thông tin sách chính xác', () => {
     render(<BookCard book={mockBook} onBorrow={jest.fn()} />);
 
-    expect(screen.getByText('Clean Architecture')).toBeInTheDocument();
-    expect(screen.getByText(/Robert C\. Martin/)).toBeInTheDocument();
+    expect(screen.getByText('Giáo trình Chuyên ngành A')).toBeInTheDocument();
+    expect(screen.getByText(/Nguyễn Văn A/)).toBeInTheDocument();
     expect(screen.getByText(/CNTT/)).toBeInTheDocument();
     expect(screen.getByTestId('copies-b1')).toHaveTextContent('1');
   });

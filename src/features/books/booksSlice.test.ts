@@ -10,10 +10,10 @@ import { Book } from '../../types/book';
 describe('booksSlice Reducer', () => {
   const sampleBook: Book = {
     id: 'b1',
-    title: 'Clean Code',
-    author: 'Robert C. Martin',
+    title: 'Giáo trình Chuyên ngành A',
+    author: 'Nguyễn Văn A',
     genre: 'CNTT',
-    publishYear: 2008,
+    publishYear: 2023,
     availableCopies: 2
   };
 
@@ -33,7 +33,14 @@ describe('booksSlice Reducer', () => {
     const prevState: BooksState = {
       ...initialState,
       books: [{ ...sampleBook, availableCopies: 1 }],
-      borrowedBooks: [{ id: 'b1', title: 'Clean Code', author: 'Robert C. Martin', genre: 'CNTT' }]
+      borrowedBooks: [
+        {
+          id: 'b1',
+          title: 'Giáo trình Chuyên ngành A',
+          author: 'Nguyễn Văn A',
+          genre: 'CNTT'
+        }
+      ]
     };
 
     const nextState = booksReducer(prevState, returnBook('b1'));

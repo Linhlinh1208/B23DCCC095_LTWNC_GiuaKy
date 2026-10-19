@@ -1,18 +1,61 @@
 import { Book, ApiResponse } from '../types/book';
 
 const MOCK_BOOKS: Book[] = [
-  { id: 'b1', title: 'Clean Code', author: 'Robert C. Martin', genre: 'CNTT', publishYear: 2008, availableCopies: 2 },
-  { id: 'b2', title: 'Design Patterns', author: 'Gang of Four', genre: 'CNTT', publishYear: 1994, availableCopies: 1 },
-  { id: 'b3', title: 'Kinh tế vi mô', author: 'N. Gregory Mankiw', genre: 'Kinh tế', publishYear: 2014, availableCopies: 3 },
-  { id: 'b4', title: 'English Grammar in Use', author: 'Raymond Murphy', genre: 'Ngoại ngữ', publishYear: 2019, availableCopies: 0 },
-  { id: 'b5', title: 'Refactoring', author: 'Martin Fowler', genre: 'CNTT', publishYear: 2018, availableCopies: 1 }
+  {
+    id: 'b1',
+    title: 'Giáo trình Chuyên ngành A',
+    author: 'Nguyễn Văn A',
+    genre: 'CNTT',
+    publishYear: 2023,
+    availableCopies: 3
+  },
+  {
+    id: 'b2',
+    title: 'Kỹ thuật Lập trình B',
+    author: 'Trần Thị B',
+    genre: 'CNTT',
+    publishYear: 2021,
+    availableCopies: 1
+  },
+  {
+    id: 'b3',
+    title: 'Nguyên lý Quản trị C',
+    author: 'Lê Văn C',
+    genre: 'Kinh tế',
+    publishYear: 2020,
+    availableCopies: 4
+  },
+  {
+    id: 'b4',
+    title: 'Phân tích Tài chính D',
+    author: 'Phạm Thị D',
+    genre: 'Kinh tế',
+    publishYear: 2022,
+    availableCopies: 2
+  },
+  {
+    id: 'b5',
+    title: 'Tiếng Anh Chuyên ngành E',
+    author: 'Hoàng Văn E',
+    genre: 'Ngoại ngữ',
+    publishYear: 2024,
+    availableCopies: 2
+  },
+  {
+    id: 'b6',
+    title: 'Giao tiếp Ngoại ngữ F',
+    author: 'Vũ Thị F',
+    genre: 'Ngoại ngữ',
+    publishYear: 2023,
+    availableCopies: 0 
+  }
 ];
 
 export const fetchBooksApi = (shouldFail: boolean = false): Promise<ApiResponse<Book[]>> => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       if (shouldFail) {
-        resolve({ ok: false, error: 'Không thể kết nối đến máy chủ thư viện!' });
+        resolve({ ok: false, error: 'Không thể kết nối đến máy chủ thư viện của khoa!' });
       } else {
         resolve({ ok: true, data: [...MOCK_BOOKS] });
       }
