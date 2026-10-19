@@ -12,7 +12,6 @@ export const BookList: React.FC = () => {
 
   const debouncedSearch = useDebounce(searchQuery, 300);
 
-  // useMemo tối ưu lọc danh sách
   const filteredBooks = useMemo(() => {
     return books.filter((book) => {
       const matchGenre = selectedGenre === 'Tất cả' || book.genre === selectedGenre;
@@ -24,7 +23,6 @@ export const BookList: React.FC = () => {
     });
   }, [books, debouncedSearch, selectedGenre]);
 
-  // useCallback tránh re-render BookCard
   const handleBorrow = useCallback(
     (id: string) => {
       dispatch(borrowBook(id));

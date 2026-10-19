@@ -16,17 +16,13 @@ describe('useDebounce Hook', () => {
     });
 
     expect(result.current).toBe('ban dau');
-
-    // Cập nhật giá trị mới
     rerender({ val: 'thay doi', delay: 300 });
 
-    // Khi chưa tua timer, giá trị vẫn là cũ
     act(() => {
       jest.advanceTimersByTime(200);
     });
     expect(result.current).toBe('ban dau');
 
-    // Sau khi đủ 300ms
     act(() => {
       jest.advanceTimersByTime(100);
     });
