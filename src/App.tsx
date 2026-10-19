@@ -29,10 +29,10 @@ export const AppContent: React.FC = () => {
         <h1>Mini Library</h1>
         <div>
           <button onClick={() => setCurrentRoute(currentRoute === 'home' ? 'stats' : 'home')} style={{ marginRight: '10px' }}>
-            {currentRoute === 'home' ? 'Xem Thống Kê (/stats)' : 'Về Trang Chủ'}
+            {currentRoute === 'home' ? 'Xem Thống Kê' : 'Về Trang Chủ'}
           </button>
           <button onClick={toggleTheme}>
-            Đổi sang giao diện {theme === 'light' ? 'Tối (Dark)' : 'Sáng (Light)'}
+            Đổi sang giao diện {theme === 'light' ? 'tối ' : 'sáng '}
           </button>
         </div>
       </header>
